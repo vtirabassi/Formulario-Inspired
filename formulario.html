@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/form.css" />
+    <script src="js/form.js"></script>
+</head>
+<body>
+    <header>
+       <form method="POST" id="finpired" action="mailto:vinicius.oliveira@fiap.com.br">
+        
+        <fieldset id="usuario"><legend>Dados Pessoais</legend>
+            <label for="codigoPromocional">Código Promocional</label>
+            <input type="text" class="form-control" id="codigoPromocional" placeholder="" value="" required maxlength="10" required="Digite o codigo">
+
+            <label for="validarBtn">&nbsp;</label>
+            <button class="form-control btn-default" id="validarBtn">Validar</button>
+        </fieldset>
+
+        <fieldset id="usuario"><legend>Dados Pessoais</legend>
+            <p><label for="cNome">Nome</label> <input type="text" required="required" name="tName" id="cNome" size="40" maxlength="30" placeholder="Nome Completo"></p>
+            <p><label for="cCPF">CPF</label> <input type="text" required="required" name="tCPF" id="cCPF" size="11" maxlength="11"></p>
+            <p><label for="cEmail">Email</label> <input type="email" required="required" name="tEmal" id="cEmail" size="20" maxlength="15"></p>
+            <fieldset id="sexo"><legend>Sexo</legend>
+                <input type="radio" name="tSexo" id="cMasc"> <label for="cMasc">Masculino</label><br>
+                <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
+            </fieldset>
+            <p>Data de Nascimento <input type="date" required="required" name="tDataNascimento" id="cDataNascimento"></p>
+        </fieldset>
+
+      <fieldset id="endereco"><legend>Endereço do Usuario:</legend>
+            <p><label for="cCEP">CEP</label> <input type="text" name="tCEP" id="cCEP" size="9" maxlength="8"></p>
+            <p><label for="cEnd">Endereco</label> <input type="text" name="tEnd" id="cEnd" placeholder="Rua, Numero"></p>
+            <p><label for="cEstado">Estado</label> <select name="tEstado" id="cEstado">
+                <optgroup label="Regiao Sudeste">
+                    <option selected>SP</option>
+                    <option>RJ</option>
+                    <option>MG</option>
+                </optgroup>
+                <optgroup label="Regiao Nordeste">
+                    <option>BH</option>
+                </optgroup>
+            </select></p>
+            <p><label for="cCidade">Cidade</label> <input type="text" name="tCidade" id="cCidade" list="cidades"></p>
+            <datalist id="cidades">
+                <option value="Rio de Janeiro"></option>
+            </datalist>
+      </fieldset>
+        
+    <fieldset id="experiencia"><legend>Conte sobre a experiencia:</legend>
+            <p><label for="cQualidade">Qualidade </label><input type="range" name="tQualidade" id="cQualidade" min="0" max="10"></p>
+            <p><label for="cObs">Obs</label><br><textarea name="tObs" id="cObs" cols="45" rows="5" placeholder="Conte para nos sobre a experiencia"></textarea></p>
+    </fieldset>
+
+    <fieldset id="termo"><legend>Termo</legend>
+        <p><input type="checkbox" name="tTermo" id="cTermo" required="required"><label for="cTermo">Aceita receber novidades</label></p>
+    </fieldset>
+
+    <button class="form-control btn-success" id="enviarBtn" onclick="Enviar();">Enviar</button>
+
+    </form>
+    </header>
+</body>
+</html>
