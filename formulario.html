@@ -8,81 +8,180 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/form.css" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div class="animated" style="display: none" id="formularioCodigo">
-            <form method="POST" id="fcod">
-                <fieldset id="usuario">
-                    <legend>Código</legend>
-                    <label for="codigoPromocional">Código Promocional</label>
-                    <input type="text" class="form-control" id="codigoPromocional" placeholder="" value="" required
-                        maxlength="10" required="Digite o codigo">
+    <div class="container h-100" style="height: 100vh!important">
+        <div class="row h-100 justify-content-center align-items-center">
+            <div class="animated" style="display: none" id="formularioCodigo">
+                <form method="POST" id="fcod" class="form-inline">
+                    <label class="sr-only" for="codigoPromocional">Codigo</label>
+                    <input type="text" class="form-control mb-2 mr-sm-2" id="codigoPromocional" placeholder="Codigo Promocional"
+                        required>
+                    <button type="submit" class="btn btn-primary mb-2">Validar</button>
+                </form>
+            </div>
 
-                    <label for="validarBtn">&nbsp;</label>
-                    <button type="submit" id="validarBtn">Validar</button>
-                </fieldset>
-            </form>
-        </div>
-        <div class="animated" style="display: none" id="formularioInscricao">
-            <form method="POST" id="finspired">
-                <fieldset id="usuario">
-                    <legend>Dados Pessoais</legend>
-                    <p><label for="cNome">Nome</label> <input type="text" name="tName" id="cNome"
-                            size="40" maxlength="30" placeholder="Nome Completo"></p>
-                    <p><label for="cCPF">CPF</label> <input type="text" name="tCPF" id="cCPF" size="11"
-                            maxlength="11"></p>
-                    <p><label for="cEmail">Email</label> <input type="email" name="tEmal" id="cEmail"
-                            size="20" maxlength="15"></p>
-                    <fieldset id="sexo">
-                        <legend>Sexo</legend>
-                        <input type="radio" name="tSexo" id="cMasc"> <label for="cMasc">Masculino</label><br>
-                        <input type="radio" name="tSexo" id="cFem"> <label for="cFem">Feminino</label>
-                    </fieldset>
-                    <p>Data de Nascimento <input type="date" name="tDataNascimento" id="cDataNascimento"></p>
-                </fieldset>
+            <div class="animated" style="display: none" id="formularioInscricao">
+                <form method="POST" id="finspired" class="needs-validation" novalidate>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="cNome">Nome</label>
+                            <input type="text" class="form-control" id="cNome" placeholder="Primeiro Nome" required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um nome válido.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cSobrenome">Sobrenome</label>
+                            <input type="text" class="form-control" id="cSobrenome" placeholder="Sobrenome" required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um sobrenome válido.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cCPF">CPF</label>
+                            <input type="text" class="form-control" id="cCPF" placeholder="CPF" size="11" maxlength="11"
+                                required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um CPF válido.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-4">
+                            <label for="cDataNascimento">Data de Nascimento</label>
+                            <input type="date" class="form-control" name="tDataNascimento" id="cDataNascimento"
+                                required>
+                            <div class="invalid-feedback">
+                                Por favor, digite uma data válida.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            Sexo
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="M"
+                                    checked><label class="form-check-label" for="gridRadios1">Masculino</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="F"><label
+                                    class="form-check-label" for="gridRadios2">Feminino</label>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cTelefone">Telefone</label>
+                            <input type="text" class="form-control" id="cTelefone" placeholder="Telefone Celular" size="11"
+                                max="11" required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um telefone válido.
+                            </div>
+                        </div>
+                    </div>
 
-                <fieldset id="endereco">
-                    <legend>Endereço do Usuario:</legend>
-                    <p><label for="cCEP">CEP</label> <input type="text" name="tCEP" id="cCEP" size="9" maxlength="8"></p>
-                    <p><label for="cEnd">Endereco</label> <input type="text" name="tEnd" id="cEnd" placeholder="Rua, Numero"></p>
-                    <p><label for="cEstado">Estado</label> <select name="tEstado" id="cEstado">
-                            <optgroup label="Regiao Sudeste">
-                                <option selected>SP</option>
-                                <option>RJ</option>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="cEmail">Email</label>
+                            <input type="email" class="form-control" id="cEmail" placeholder="Email" required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um email válido.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cCEP">CEP</label>
+                            <input type="text" class="form-control" id="cCEP" placeholder="Apenas numeros" maxlength="8"
+                                required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um CEP válido.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="cEnd">Endereço</label>
+                            <input type="text" class="form-control" id="cEnd" placeholder="Rua, Av - nº" required>
+                            <div class="invalid-feedback">
+                                Por favor, digite um endereço válido.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="cCidade">Cidade</label>
+                            <input type="text" class="form-control" id="cCidade" required>
+                            <div class="invalid-feedback">
+                                Por favor, digite uma cidade válida.
+                            </div>
+                        </div>
+                        <div class="form-group col-md-2">
+                            <label for="cEstado">Estado</label>
+                            <select id="cEstado" class="form-control">
+                                <option>AC</option>
+                                <option>AL</option>
+                                <option>AP</option>
+                                <option>AM</option>
+                                <option>BA</option>
+                                <option>CE</option>
+                                <option>DF</option>
+                                <option>ES</option>
+                                <option>GO</option>
+                                <option>MA</option>
+                                <option>MT</option>
+                                <option>MS</option>
                                 <option>MG</option>
-                            </optgroup>
-                            <optgroup label="Regiao Nordeste">
-                                <option>BH</option>
-                            </optgroup>
-                        </select></p>
-                    <p><label for="cCidade">Cidade</label> <input type="text" name="tCidade" id="cCidade" list="cidades"></p>
-                    <datalist id="cidades">
-                        <option value="Rio de Janeiro"></option>
-                    </datalist>
-                </fieldset>
-
-                <fieldset id="experiencia">
-                    <legend>Conte sobre a experiencia:</legend>
-                    <p><label for="cQualidade">Qualidade </label><input type="range" name="tQualidade" id="cQualidade"
-                            min="0" max="10"></p>
-                    <p><label for="cObs">Obs</label><br><textarea name="tObs" id="cObs" cols="45" rows="5" placeholder="Conte para nos sobre a experiencia"></textarea></p>
-                </fieldset>
-
-                <fieldset id="termo">
-                    <legend>Termo</legend>
-                    <p><input type="checkbox" name="tTermo" id="cTermo"> 
-                    <label for="cTermo">Aceita receber novidades</label></p>
-                </fieldset>
-
-                <button class="form-control btn-success" id="enviarBtn" onclick="Enviar();">Enviar</button>
-
-            </form>
+                                <option>PA</option>
+                                <option>PB</option>
+                                <option>PR</option>
+                                <option>PE</option>
+                                <option>PI</option>
+                                <option>RJ</option>
+                                <option>RN</option>
+                                <option>RS</option>
+                                <option>RO</option>
+                                <option>RR</option>
+                                <option>SC</option>
+                                <option selected>SP</option>
+                                <option>SE</option>
+                                <option>TO</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="cQualidade">Nota para Experiencia</label>
+                            <input type="range" class="custom-range" min="0" max="10" step="1" id="cQualidade">
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-group col-md-8">
+                            <label for="cComment">Comentario</label>
+                            <textarea class="form-control" rows="5" id="cComment" required></textarea>
+                            <div class="invalid-feedback">
+                                Por favor, deixa um comentário para nós.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="custom-control custom-checkbox col-md-8">
+                            <input type="checkbox" class="custom-control-input" id="cTermo">
+                            <label class="custom-control-label" for="cTermo">Aceito receber novidades</label>
+                        </div>
+                    </div>
+                    <br>
+                    <button class="form-control btn-success" type="submit" id="enviarBtn">Enviar</button>
+                </form>
+            </div>
         </div>
-    </header>
+    </div>
+
     <script src="js/form.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
 </body>
 
 </html>

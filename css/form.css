@@ -4,8 +4,12 @@
     background: url("../img/backgroudform.png")
 }*/
 
-#formularioCodigo, #formularioInscricao {
+/* #formularioCodigo, #formularioInscricao {
     width: 500px;
+    margin: auto;
+} */
+
+#cabecario {
     margin: auto;
 }
 
