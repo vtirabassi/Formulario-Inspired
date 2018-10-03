@@ -6,16 +6,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="css/form.css" />
+
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.5.2/animate.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
         crossorigin="anonymous">
+    <link rel="stylesheet" href="css/form.css" />
 </head>
 
 <body>
     <div class="container h-100" style="height: 100vh!important">
         <div class="row h-100 justify-content-center align-items-center">
             <div class="animated" style="display: none" id="formularioCodigo">
+                <div class="background-image fundo-1"></div>
                 <form method="POST" id="fcod" class="form-inline">
                     <label class="sr-only" for="codigoPromocional">Codigo</label>
                     <input type="text" class="form-control mb-2 mr-sm-2" id="codigoPromocional" placeholder="Codigo Promocional"
@@ -25,6 +27,7 @@
             </div>
 
             <div class="animated" style="display: none" id="formularioInscricao">
+                <div class="background-image fundo-2"></div>
                 <form method="POST" id="finspired" class="needs-validation" novalidate>
                     <div class="row">
                         <div class="form-group col-md-4">
@@ -170,7 +173,6 @@
                     </div>
                     <br>
 
-                    <!-- Botão para acionar modal -->
                     <button type="button" class="btn btn-primary d-none" data-toggle="modal" data-target="#BotaoEnviar"
                         id="bAbreModal">Enviar</button>
                     <button type="submit" class="btn btn-primary" id="bAbreModal2">Enviar</button>
@@ -207,6 +209,13 @@
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!--Premiacao-->
+            <div id="parabens" style="display: none">
+                <div class="background-image fundo-3"></div>
+                OBRIGADO POR PARTICIPAR <b><label id="pNome"></label><br></b>
+                Você acaba de ganhar um ingresso para o <b>SALÃO DO ATUOMÓVEL!</b>
             </div>
         </div>
     </div>

@@ -1,13 +1,41 @@
 @charset "UTF-8";
 
-/*body {
-    background: url("../img/backgroudform.png")
-}*/
-
-/* #formularioCodigo, #formularioInscricao {
-    width: 500px;
-    margin: auto;
+/* #formularioCodigo{
+    border-radius: 8rem;
+    background-color: white;
 } */
+
+.background-image {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: -1;
+    display: block; 
+  }
+
+  .fundo-1 {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(41, 128, 185, 0.65)), url(../img/background.jpg) center top no-repeat;
+    background-size: cover;  
+  }
+  
+  .fundo-2 {
+      background: linear-gradient(
+          to bottom,
+          #2980b9 25%,
+          #e0ecff 25%,
+          #e0ecff
+      );
+    background-size: cover;  
+  }
+
+  .fundo-3 {
+    background: linear-gradient(45deg, rgba(0, 0, 0, 0.8), rgba(41, 128, 185, 0.65)), url(../img/call-to-action-bg.jpg) center top no-repeat;
+    background-size: cover;    
+  }
+
+
 
 #cabecario {
     margin: auto;
@@ -19,19 +47,34 @@ input, textarea {
     font-size: 12px;
 }
 
-input:hover, textarea:hover {
-    background-color: #dddddd
-}
-
 legend {
     font-size: 15pt;
 }
 
-fieldset {
-     border-color: #cecece;
-     margin: 10px;
- }
-
  fieldset#sexo {
      width: 100px;
  }
+
+ #codigoPromocional{
+    background: rgba(255,255,255,0.1)
+  }
+
+  #parabens{
+      color: white;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 22pt;
+      font-stretch: expanded;
+      text-align: center;
+  }
+
+  #pNome{
+      text-transform: uppercase;
+  }
+
+  #finspired{
+    box-shadow: 10px 10px 35px #888888 !important;
+    padding: 150px 50px;
+    border-radius: 10px;
+    background-color: white;
+    /* border: 1px solid #ccc; */
+  }

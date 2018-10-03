@@ -58,7 +58,6 @@ function codigoUsado() {
 }
 
 function enviaForm() {
-    alert("a");
     var firstName = document.querySelector("#cNome").value
     var lastName = document.querySelector("#cSobrenome").value
     var cpf = document.querySelector("#cCPF").value
@@ -103,7 +102,7 @@ function enviaForm() {
         .then(json => {
             console.log(json)
             if (json.sucesso) {
-                alert("dados enviados")
+                deParabens();
                 codigoUsado();
             }
             else {
@@ -114,6 +113,22 @@ function enviaForm() {
         .catch(function (err) {
             console.error(err)
         })
+}
+
+function deParabens(){
+
+    $('#BotaoEnviar').modal('hide');
+    var modal = document.querySelector("#BotaoEnviar")
+    var formInspired = document.querySelector("#formularioInscricao")
+    var parabens = document.querySelector("#parabens")
+    
+    //modal.style.display = 'none'
+    formInspired.style.display = 'none'
+
+    parabens.style.display = 'block'
+    document.querySelector("#pNome").innerHTML = document.querySelector("#cNome").value
+    parabens.classList.add('slower')
+    parabens.classList.add('fadeIn')
 }
 
 (function () {
