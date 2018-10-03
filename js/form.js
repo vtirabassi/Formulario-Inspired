@@ -37,9 +37,8 @@ function validaCodigo(event) {
         })
 }
 
-function codigoUsado(event) {
+function codigoUsado() {
     // var nome = document.getElementById("cNome")
-    event.preventDefault()
     var codigo = document.querySelector('#codigoPromocional').value
     fetch("https://localhost:44346/api/CodigoPromocional/MarcarCodigoUsado", {
         method: "POST",
@@ -58,8 +57,8 @@ function codigoUsado(event) {
         })
 }
 
-function enviaForm(event) {
-    event.preventDefault()
+function enviaForm() {
+    alert("a");
     var firstName = document.querySelector("#cNome").value
     var lastName = document.querySelector("#cSobrenome").value
     var cpf = document.querySelector("#cCPF").value
@@ -105,10 +104,11 @@ function enviaForm(event) {
             console.log(json)
             if (json.sucesso) {
                 alert("dados enviados")
+                codigoUsado();
             }
             else {
-                event.preventDefault();
-                event.stopPropagation();
+                // event.preventDefault();
+                // event.stopPropagation();
             }
         })
         .catch(function (err) {
@@ -127,12 +127,36 @@ function enviaForm(event) {
                 if (form.checkValidity() === false) {
                     event.preventDefault();
                     event.stopPropagation();
+                }else{
+                    event.preventDefault();
+                    event.stopPropagation();
+                    AbreModal();
                 }
                 form.classList.add('was-validated');
             }, false);
         });
     }, false);
 })();
+
+function AbreModal() {
+    document.querySelector("#lblNome").innerHTML = document.querySelector("#cNome").value + ' ' + document.querySelector("#cSobrenome").value
+    document.querySelector("#lblCpf").innerHTML = document.querySelector("#cCPF").value
+    document.querySelector("#lblDataNascimento").innerHTML = document.querySelector("#cDataNascimento").value
+    document.querySelector("#lblSexo").innerHTML = document.querySelector("input[name='gridRadios']:checked").value
+    document.querySelector("#lblTelefone").innerHTML = document.querySelector("#cTelefone").value
+    document.querySelector("#lblEmail").innerHTML = document.querySelector("#cEmail").value
+    document.querySelector("#lblCep").innerHTML = document.querySelector("#cCEP").value
+    document.querySelector("#lblEnd").innerHTML = document.querySelector("#cEnd").value
+    document.querySelector("#lblCidade").innerHTML = document.querySelector("#cCidade").value
+    document.querySelector("#lblEstado").innerHTML = document.querySelector("#cEstado").value
+
+    var ele = document.getElementById('bAbreModal');
+    if (typeof ele.click == 'function') {
+        ele.click()
+    } else if (typeof ele.onclick == 'function') {
+        ele.onclick()
+    }
+}
 
 
 var formCod = document.querySelector("#formularioCodigo")
