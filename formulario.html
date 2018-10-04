@@ -118,6 +118,7 @@
                         <div class="form-group col-md-2">
                             <label for="cEstado">Estado</label>
                             <select id="cEstado" class="form-control">
+                                <option disabled selected>...</option>
                                 <option>AC</option>
                                 <option>AL</option>
                                 <option>AP</option>
@@ -142,7 +143,7 @@
                                 <option>RO</option>
                                 <option>RR</option>
                                 <option>SC</option>
-                                <option selected>SP</option>
+                                <option>SP</option>
                                 <option>SE</option>
                                 <option>TO</option>
                             </select>
@@ -151,24 +152,24 @@
                     <br>
                     <div class="row">
                         <div class="form-group col-md-8">
-                            <label for="cQualidade">Nota para Experiencia</label>
+                            <label for="cQualidade">Nota para Experiência</label>
                             <input type="range" class="custom-range" min="0" max="10" step="1" id="cQualidade">
                         </div>
                     </div>
                     <br>
                     <div class="row">
-                        <div class="form-group col-md-8">
-                            <label for="cComment">Comentario</label>
+                        <div class="form-group col-md-12">
+                            <label for="cComment">Comentário</label>
                             <textarea class="form-control" rows="5" id="cComment" required></textarea>
                             <div class="invalid-feedback">
-                                Por favor, deixa um comentário para nós.
+                                Por favor, comente sobre o que achou da experiência.
                             </div>
                         </div>
                     </div>
                     <div class="row">
                         <div class="custom-control custom-checkbox col-md-8">
                             <input type="checkbox" class="custom-control-input" id="cTermo">
-                            <label class="custom-control-label" for="cTermo">Aceito receber novidades</label>
+                            <label class="custom-control-label" for="cTermo">Desejo receber novidades e informações sobre a Citroen.</label>
                         </div>
                     </div>
                     <br>
@@ -186,7 +187,7 @@
                 <div class="modal-dialog modal-dialog-centered" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title" id="TituloModalCentralizado">Dados pessoais</h5>
+                            <h5 class="modal-title" id="TituloModalCentralizado">Confirmar dados pessoais</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -204,8 +205,8 @@
                             <b>Estado: </b> <label id="lblEstado"></label><br>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                            <button class="form-control btn-success" onclick="enviaForm()" id="enviarBtn">Enviar</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                            <button class="form-control btn-success" onclick="enviaForm()" id="enviarBtn">Confirmar</button>
                         </div>
                     </div>
                 </div>
@@ -215,7 +216,7 @@
             <div id="parabens" style="display: none">
                 <div class="background-image fundo-3"></div>
                 OBRIGADO POR PARTICIPAR <b><label id="pNome"></label><br></b>
-                Você acaba de ganhar um ingresso para o <b>SALÃO DO ATUOMÓVEL!</b>
+                Você acaba de ganhar um ingresso para o <b>SALÃO DO AUTOMÓVEL!</b>
             </div>
         </div>
     </div>
