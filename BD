@@ -1,0 +1,41 @@
+use BaseTeste
+select * from site_fiap..DadosAlunos
+select * from CodigoPromo
+use BaseTeste
+update CodigoPromo set usado = 0 where codigo = '5vi4%8&ui'
+
+create table Participantes(
+	ID int identity primary key
+	,Nome varchar(255)
+	,CPF varchar(255)
+	,Email varchar(255)
+	,TelefoneCelular varchar(255)
+	,Sexo varchar(2)
+	,DataNascimento date
+)
+
+create table EnderecoParticipante(
+ID int identity primary key
+,CEP varchar(255)
+,Endereco varchar(255)
+,Estado varchar(2)
+,Cidade varchar(255)
+)
+
+create table Experiencia(
+ID int identity primary key
+,ParticipanteID int foreign key references Participantes(ID)
+,Qualidade int
+,Obs varchar(255)
+,Notificacao bit
+)
+
+insert into Participantes values ('Vinicius Oliveira', '46922801822', 'teste@bol.com.br', '988888888', 'M', GETDATE()); SELECT @@IDENTITY
+select * from Participantes
+INSERT INTO EnderecoParticipante VALUES('CEP', 'END', 'SP', 'SAO PAULO')
+insert into Experiencia values ((select id from Participantes where ID = 1), 10, 'estou testando', 1)
+
+select * from Participantes
+select * from EnderecoParticipante
+select * from Experiencia
+
